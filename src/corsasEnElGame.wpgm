@@ -1,7 +1,28 @@
 import wollok.game.*
+import autos.*
+import dependencias.*
+import trafic.*
+import colores.*
 
 program corsasEnElGame {
 	// hacer las inicializaciones necesarias 
 	
+	var corsa = new ChevroletCorsa(color="rojo",image="autitorojo.png",position = game.at(1,1))
+	var corsa2 = new ChevroletCorsa(color="verde",image="autitoverde.png",position = game.at(1,2))
+	var corsa3 = new ChevroletCorsa(color="azul",image="autitoazul.png",position = game.at(1,3))
+	game.title("Corsas en el Game")
+	game.height(10)
+	game.width(10)
+	game.addVisual(corsa)
+	game.addVisual(corsa2)
+	game.addVisual(corsa3)
+	keyboard.up().onPressDo({corsa.moverseArriba()})
+	keyboard.down().onPressDo({corsa.moverseAbajo()})
+	keyboard.right().onPressDo({corsa.moverseDerecha()})
+	keyboard.left().onPressDo({corsa.moverseIzquierda()})
+	keyboard.v().onPressDo({corsa.cambiarAVerde()})
+	keyboard.a().onPressDo({corsa.cambiarAAzul()})
+	keyboard.r().onPressDo({corsa.cambiarARojo()})
+		
 	game.start()
 }

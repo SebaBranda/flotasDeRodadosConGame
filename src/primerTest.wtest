@@ -1,0 +1,15 @@
+import pedidosDeTraslados.*
+import autos.*
+
+test "Primera Parte" {
+	
+	const cachito = new ChevroletCorsa(color="Rojo")
+	const ped1 = new Pedido(distancia = 960, tiempoMaximoDeViaje=8, cantidadDePasajeros=4, coloresIncompatibles=#{"Azul","Negro"})
+	const ped2 = new Pedido(distancia = 960, tiempoMaximoDeViaje=8, cantidadDePasajeros=4, coloresIncompatibles=#{"Azul","Negro","Rojo"})
+	const ped3 = new Pedido(distancia = 960, tiempoMaximoDeViaje=6, cantidadDePasajeros=4, coloresIncompatibles=#{"Azul","Negro"})
+	
+	assert.that(ped1.esteAutoCumple(cachito))
+	assert.notThat(ped2.esteAutoCumple(cachito))
+	assert.notThat(ped3.esteAutoCumple(cachito))
+	
+}
