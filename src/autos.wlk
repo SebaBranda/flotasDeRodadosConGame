@@ -39,6 +39,10 @@ class ChevroletCorsa {
 		return listaDePosiciones.map({pos => pos.y()}).asSet().contains(numero)
 	}
 	
+	method pasoPorColumna(numero){
+		return listaDePosiciones.map({pos => pos.x()}).asSet().contains(numero)
+	}
+	
 	method  recorrioFilas(lista_de_numeros) {
 		return lista_de_numeros.all({numero => self.pasoPorFila(numero)})
 	}
